@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<users>
+  <user>
+    <username>kvir-12</username>
+    <password>267b317708cef7d3f0a7f4beeddea50b9a756457</password>
+    <email>kvir-12</email>
+    <firstname>kvir-12</firstname>
+    <cookie>kvir-12</cookie>
+    <session>kvir-12</session>
+  </user>
+  <user>
+    <username>kvirv</username>
+    <password/>
+    <email>igor@test.com</email>
+    <firstname>Igor</firstname>
+  </user>
+</users>
