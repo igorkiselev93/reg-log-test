@@ -20,12 +20,13 @@ function checkUnique($userData, $users){
     }
     return $unique;
 };
+// хэширование пароля с солью
 function hashPassword($password){
     $salt = "qm&h*pg!@";
     $password = sha1($salt . $password);
     return $password;
 };
-
+// проверка username и password при входе
 function checkUsernameAndPassword($userData){
     $check = false;
     $xmldoc = new DomDocument( '1.0' );
@@ -34,33 +35,30 @@ function checkUsernameAndPassword($userData){
     if( $xml = file_get_contents('db/users.xml') ) {
         $xmldoc->loadXML($xml, LIBXML_NOBLANKS);
         $users = $xmldoc->getElementsByTagName('user');
+        // в цикле для каждой ноды пользователя проверяем логин и пароль
         foreach ($users as $user) {
-
                 if ($user->firstChild->nodeValue == $userData["username"]){
                     if ($user->firstChild->nextSibling->nodeValue == hashPassword($userData["password"])){
+                        // если совпал username и пароль, то создаем сессию и куки и сохраняем в базу
                         $check = true;
-                        if (!($user->lastChild->previousSibling->nodeName == "cookie" && $user->lastChild->nodeName == "session")){
-                            setcookie('username', $userData["username"], time()+(60*60*24),  '/');
-                            session_start();
-                            $_SESSION['username'] = $userData["username"];
-                            $cookieElement = $xmldoc->createElement('cookie');
-                            $user->appendChild($cookieElement);
-                            $cookieText = $xmldoc->createTextNode($_COOKIE['username']);
-                            $cookieElement->appendChild($cookieText);
-                            $sessionElement = $xmldoc->createElement('session');
-                            $user->appendChild($sessionElement);
-                            $sessionText = $xmldoc->createTextNode($_SESSION['username']);
-                            $sessionElement->appendChild($sessionText);
-                            $xmldoc->save('db/users.xml');
-                        }
-
-
+                        setcookie("username", $userData["username"], time()+(60*60*24));
+                        session_start();
+                        $_SESSION['username'] = $userData["username"];
+                        $cookieElement = $xmldoc->createElement('cookie');
+                        $user->appendChild($cookieElement);
+                        $cookieText = $xmldoc->createTextNode($userData["username"]);
+                        $cookieElement->appendChild($cookieText);
+                        $sessionElement = $xmldoc->createElement('session');
+                        $user->appendChild($sessionElement);
+                        $sessionText = $xmldoc->createTextNode($_SESSION['username']);
+                        $sessionElement->appendChild($sessionText);
+                        $xmldoc->save('db/users.xml');
                         break;
                     }
                 }
         }
     }
-
     return $check;
 };
+
 ?>

@@ -1,3 +1,39 @@
+<?php
+// открываем сессию, чтобы проверить не залогинился ли уже пользователь
+session_start();
+// получаем всех пользователей из базы данных
+function getUsersFromDB (){
+    $xmldoc = new DomDocument( '1.0' );
+    $xmldoc->preserveWhiteSpace = false;
+    $xmldoc->formatOutput = true;
+    if( $xml = file_get_contents('db/users.xml') ) {
+        $xmldoc->loadXML($xml, LIBXML_NOBLANKS);
+        $users = $xmldoc->getElementsByTagName('user');
+    }
+    return $users;
+}
+// проверяем значение username из сессии
+if (!empty($_SESSION['username'])) {
+    $users = getUsersFromDB();
+    foreach ($users as $user) {
+        if ($user->firstChild->nodeValue == $_SESSION['username']) {
+            echo "Hello " . $_SESSION['username'];
+            break;
+        }
+    }
+} else {
+    // проверяем наличие кук
+    if (!empty($_COOKIE['username'])) {
+        $users = getUsersFromDB();
+        foreach ($users as $user) {
+            if ($user->firstChild->nodeValue == $_COOKIE['username']) {
+                echo "Hello " . $_COOKIE['username'];
+                break;
+            }
+        }
+    }
+    else {?>
+        // если нет сессии и кук, то выводим стандартную страничку для логина
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,5 +53,9 @@
     </form>
     <div id="result_form"></div>
 </div>
-</body>
-</html>
+</body></html>
+<?php }
+}
+
+?>
+

@@ -24,11 +24,17 @@ function sendAjaxForm(ajax_form, url) {
         dataType: "html", //формат данных
         data: $("#"+ajax_form).serialize(),  // Сериализуем объект
         success: function(response) { //Данные отправлены успешно
-            
-            // парсим ответный json
-            result = $.parseJSON(response);
-            // выводим ответное сообщение от сервера
-            $('#result_form').html(result.message);
+
+            var result = $.parseJSON(response);
+            if (result.message == "1" ){
+                // если залогинились, то перезагружаем страничку
+                window.location = "login.php";
+            }
+            else {
+                // выводим ответное сообщение от сервера
+                $('#result_form').html(result.message);
+            }
+
         },
         error: function() { // Данные не отправлены
             $('#result_form').html('Ошибка. Данные не отправлены на сервер.');

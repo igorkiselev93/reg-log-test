@@ -12,8 +12,8 @@
     <p class="alert-result-reg" role="alert"></p>
     <form class="form-signin" id="ajax_form" method="post" action="">
         <input class="form-control" type="text" name="username" placeholder="Ваш логин" required>
-        <input class="form-control" type="text" name="password" placeholder="Ваш пароль" required>
-        <input class="form-control" type="text" name="confirmpassword" placeholder="Подтвердите пароль" required>
+        <input class="form-control" type="password" name="password" placeholder="Ваш пароль" required>
+        <input class="form-control" type="password" name="confirmpassword" placeholder="Подтвердите пароль" required>
         <input class="form-control" type="text" name="email" placeholder="email" required>
         <input class="form-control" type="text" name="firstname" placeholder="Имя" required>
         <button class="btn btn-registr btn-primary btn-block" type="submit">Зарегаться</button>

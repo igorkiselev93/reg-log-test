@@ -7,14 +7,14 @@ $required = array('username', 'password', 'confirmpassword', 'email', 'firstname
 $error = false;
 // Результирующее сообщение для показа пользователю
 $result = array(
-    "message" => "Произошла ошибка",
+    "message" => "Произошла ошибка"
 );
 // В цикле проверяем все поля ввода - чтобы не было пустых
 foreach($required as $field) {
     if (empty($_POST[$field])) {
         $error = true;
         $result = array(
-            "message" => "Внимание, вы не заполнили все поля регистрации, поэтому вы не зарегистрированы",
+            "message" => "Внимание, вы не заполнили все поля регистрации, поэтому вы не зарегистрированы"
         );
     }
 };
@@ -23,7 +23,7 @@ if (!$error) {
     if ($_POST["password"]!=$_POST["confirmpassword"]){
         $error = true;
         $result = array(
-            "message" => "Внимание, вы указали разные пароли",
+            "message" => "Внимание, вы указали разные пароли"
         );
     };
 }
@@ -75,16 +75,16 @@ if (!$error) {
             // сохраняем
             $xmldoc->save('db/users.xml');
             $result = array(
-                "message" => "Вы успешно зарегистрированы. <a href='login.php'>Войти в личный кабинет</a>",
+                "message" => "Вы успешно зарегистрированы. <a href='login.php'>Войти в личный кабинет</a>"
             );
         } else {
             $result = array(
-                "message" => "Невозможно подключиться к базе данных",
+                "message" => "Невозможно подключиться к базе данных"
             );
         }
     } else {
         $result = array(
-            "message" => "Такой логин или email уже существуют, попробуйте другие",
+            "message" => "Такой логин или email уже существуют, попробуйте другие"
         );
     }
 };

@@ -3,3 +3,10 @@
     padding: 15px;
     margin: 0 auto;
 }
+.form-control {
+    margin: 15px;
+}
+
+.btn {
+    margin: 10px;
+}
