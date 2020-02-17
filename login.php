@@ -33,7 +33,7 @@ if (!empty($_SESSION['username'])) {
         }
     }
     else {?>
-        // если нет сессии и кук, то выводим стандартную страничку для логина
+        
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,11 +44,13 @@ if (!empty($_SESSION['username'])) {
 </head>
 <body>
 <div class="container">
+    <a href="index.php">Вернуться на главную</a>
+    <br>
     <h2>Вход в кабинет</h2>
     <p class="alert-result-reg" role="alert"></p>
     <form class="form-signin" id="ajax_form" method="post" action="">
         <input class="form-control" type="text" name="username" placeholder="Ваш логин" required>
-        <input class="form-control" type="text" name="password" placeholder="Ваш пароль" required>
+        <input class="form-control" type="password" name="password" placeholder="Ваш пароль" required>
         <button class="btn btn-login btn-primary btn-block" type="submit">Войти</button>
     </form>
     <div id="result_form"></div>

@@ -1,6 +1,58 @@
 <?xml version="1.0"?>
 <users>
   <user>
+    <username>12</username>
+    <password>f64eb3c5c7978b817772a9d4b06299ef747fcf23</password>
+    <email>12@df.gfd</email>
+    <firstname>12</firstname>
+    <cookie>12</cookie>
+    <session>12</session>
+  </user>
+  <user>
+    <username>jhvjhdsvjhbsdjlvbhsjdhvjlbh</username>
+    <password>9fe485dd48fe4705516174808e03cf54ffc77c7d</password>
+    <email>jhvjhdsvjhbsdjlvbhsjdhvjlbh@j.j</email>
+    <firstname>jhvjhdsvjhbsdjlvbhsjdhvjlbh</firstname>
+  </user>
+  <user>
+    <username>igor-55356435643</username>
+    <password>e1ae7b1ddf1f4dc8f4f279296f741b03a4419e0c</password>
+    <email>dc d-88</email>
+    <firstname>igor-55356435643</firstname>
+  </user>
+  <user>
+    <username>igor-34-34</username>
+    <password>6f43b5fa5b5d6eed1405b812244efbff8f29b0a4</password>
+    <email>igor-34-34</email>
+    <firstname>igor-34-34</firstname>
+    <cookie>igor-34-34</cookie>
+    <session>igor-34-34</session>
+  </user>
+  <user>
+    <username>hvkhgvkhvkhgvkhg</username>
+    <password>e56c61bc08a5f30899744e687a079fa1a8ee7599</password>
+    <email>hvkhgvkhvkhgvkhg</email>
+    <firstname>hvkhgvkhvkhgvkhg</firstname>
+    <cookie>hvkhgvkhvkhgvkhg</cookie>
+    <session>hvkhgvkhvkhgvkhg</session>
+  </user>
+  <user>
+    <username>&#x430;&#x43C;&#x440;&#x43F;&#x43B;&#x43E;&#x44B;&#x43F;&#x43C;&#x43B;&#x43E;&#x432;</username>
+    <password>4574533c63038a2973a73076875894647271b797</password>
+    <email>&#x430;&#x43C;&#x440;&#x43F;&#x43B;&#x43E;&#x44B;&#x43F;&#x43C;&#x43B;&#x43E;&#x432;</email>
+    <firstname>&#x430;&#x43C;&#x440;&#x43F;&#x43B;&#x43E;&#x44B;&#x43F;&#x43C;&#x43B;&#x43E;&#x432;</firstname>
+    <cookie>&#x430;&#x43C;&#x440;&#x43F;&#x43B;&#x43E;&#x44B;&#x43F;&#x43C;&#x43B;&#x43E;&#x432;</cookie>
+    <session>&#x430;&#x43C;&#x440;&#x43F;&#x43B;&#x43E;&#x44B;&#x43F;&#x43C;&#x43B;&#x43E;&#x432;</session>
+    <cookie>&#x430;&#x43C;&#x440;&#x43F;&#x43B;&#x43E;&#x44B;&#x43F;&#x43C;&#x43B;&#x43E;&#x432;</cookie>
+    <session>&#x430;&#x43C;&#x440;&#x43F;&#x43B;&#x43E;&#x44B;&#x43F;&#x43C;&#x43B;&#x43E;&#x432;</session>
+  </user>
+  <user>
+    <username>igor</username>
+    <password>68965adeb3867cf6c8a0c6b7f44fcb5f8f62e239</password>
+    <email>igor34@test.com</email>
+    <firstname>igor@test.com</firstname>
+  </user>
+  <user>
     <username>tret33324</username>
     <password>d74ba266f35959a607682be1aa8993a668843366</password>
     <email>tret33324</email>

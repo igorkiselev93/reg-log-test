@@ -27,6 +27,15 @@ if (!$error) {
         );
     };
 }
+// проверяем email
+if (!$error) {
+    if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        $error = true;
+        $result = array(
+            "message" => "E-mail адрес указан неверно"
+        );
+    }
+}
 // Если не было никаких ошибок, то переходим к работе с базой данных
 if (!$error) {
     // создаем массив userData и обезвреживаем пользовательский ввод
